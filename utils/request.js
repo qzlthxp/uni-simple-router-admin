@@ -37,9 +37,10 @@ export const request = ({ url, method = 'get', data, loading = true, needToken =
             position: 'bottom'
           })
           requestCount = 0
-          store.dispatch('user/logout')
-          uni.reLaunch({
-            url: '/pages/login/index'
+          store.dispatch('user/logout').then(() => {
+            uni.reLaunch({
+              url: '/pages/login/index'
+            })
           })
           reject(data)
         } else {
