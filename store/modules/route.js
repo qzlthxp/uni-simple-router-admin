@@ -23,7 +23,7 @@ export default {
               { path: '/pages/index/index' }
             ]
             context.commit('setDynamicRoutes', res)
-            resolve(res.data)
+            resolve(res)
           })
           .catch((err) => {
             reject(err)
