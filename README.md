@@ -6,5 +6,7 @@ uniapp、uni-simple-router，vue2版本权限控制项目模板
 ```shell
   npm i
 ```
+uni-ui请前往插件市场自行安装。
+
 # 启动
 安装完依赖之后，通过[`HBuilder X`](https://www.dcloud.io/hbuilderx.html)进行项目启动。推荐通过`HBuilder X`启动项目，`VsCode`进行代码编写。
