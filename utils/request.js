@@ -8,9 +8,11 @@ export const request = ({ url, method = 'get', data, loading = true, needToken =
   return new Promise((resolve, reject) => {
     if (loading) {
       requestCount++
-      uni.showLoading({
-        title: '加载中'
-      })
+      if (requestCount <= 1) {
+        uni.showLoading({
+          title: '加载中'
+        })
+      }
     }
 
     const header = {}
@@ -35,6 +37,10 @@ export const request = ({ url, method = 'get', data, loading = true, needToken =
             position: 'bottom'
           })
           requestCount = 0
+          store.dispatch('user/logout')
+          uni.reLaunch({
+            url: '/pages/login/index'
+          })
           reject(data)
         } else {
           reject(data)
